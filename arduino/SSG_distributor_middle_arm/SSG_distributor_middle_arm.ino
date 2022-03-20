@@ -42,12 +42,14 @@ void setup() {
   digitalWrite(dirPin2 , LOW);
   digitalWrite(dirPin2 , LOW);
 
+  // Enable Pin
   digitalWrite(enPin , HIGH);
 }
 void loop() {
   if(Serial.available() > 0)
   {
     char inChar = Serial.read();
+    // Enable Motor Drivers
     digitalWrite(enPin, LOW);
     if(inChar == 'o')
     {
@@ -70,6 +72,7 @@ void loop() {
   
   }
 
+  // Disable Motor Drivers
   digitalWrite(enPin , HIGH);
   
 
